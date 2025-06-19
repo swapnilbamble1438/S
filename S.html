@@ -1,146 +1,70 @@
-ChatGPT
-
-Log in
-You said:
-i want beautiful html with good morning message for girl name jayshree whom I love
-ChatGPT said:
-Here's a beautiful and romantic HTML page with a "Good Morning" message for a girl named Jayshree, designed with soft colors, elegant fonts, and a touch of affection.
-
-You can save this as an .html file and open it in any browser:
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Good Morning Jayshree</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning My Love</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #fceabb, #f8b500);
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      text-align: center;
-    }
-    .container {
-      background: #ffffffcc;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #d35400;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.5;
-    }
-    .heart {
-      color: #e74c3c;
-      font-size: 2em;
-      animation: pulse 1.5s infinite;
+      color: #fff;
+      overflow: hidden;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+    .container {
+      background: rgba(255, 105, 180, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #fff;
+    }
+
+    .heart {
+      color: #ff4b5c;
+      font-size: 2em;
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Good Morning, Jayshree 🌞</h1>
-    <p>
-      Just a little reminder from someone who cares deeply about you: <br><br>
-      You are the first thought on my mind when I wake up.<br>
-      Your smile brightens my heart, even before the sun does.<br><br>
-      Have a beautiful day, my love. 💖<br><br>
-      <span class="heart">❤️</span>
-    </p>
-  </div>
-</body>
-</html>
-How to Use:
-Copy the code above.
-
-Paste it into a text editor (like Notepad or VS Code).
-
-Save it as goodmorning.html.
-
-Open it in your browser.
-
-Would you like a version with a background image, music, or animation as well?
-
-You said:
-<h1>Good Morning, Jayu! 🌸</h1>
-    <p>Wishing you a day filled with smiles, sunshine, and sweetness,<br>
-    just like your name. 🌼✨</p>
-    <p>Have a beautiful day ahead! 💖</p> just use this message and keep the rest same
-ChatGPT said:
-Sure! Here's your updated HTML page with your custom message for Jayshree ("Jayu"), keeping the original design intact:
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Good Morning Jayu</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #fceabb, #f8b500);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    .container {
-      background: #ffffffcc;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-    }
-    h1 {
-      font-size: 2.5em;
-      color: #d35400;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.5;
-    }
-    .heart {
-      color: #e74c3c;
-      font-size: 2em;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Good Morning, Jayu My Love! 🌸</h1>
-    <p>Wishing you a day filled with smiles, sunshine, and sweetness,<br>
-    just like your name. 🌼✨</p>
-    <p>Have a beautiful day ahead! 💖</p>
-    <span class="heart">❤️</span>
+    <h1>Good Morning, My Love 💕</h1>
+    <p>Wishing the queen of my heart, <strong>Jayu</strong>, a day full of smiles, sunshine, and my love! ☀️</p>
+    <p class="heart">❤️</p>
   </div>
 </body>
 </html>
