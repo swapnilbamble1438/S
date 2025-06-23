@@ -2,43 +2,56 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <title>मेरी मोहब्बत</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>मेरी जयू</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Baloo+2&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       font-family: 'Baloo 2', cursive;
       color: #fff;
       overflow: hidden;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 20px;
     }
 
     .container {
       background: rgba(255, 255, 255, 0.1);
-      padding: 40px 30px;
-      border-radius: 25px;
+      padding: 30px 20px;
+      border-radius: 20px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-      max-width: 600px;
+      max-width: 90vw;
       backdrop-filter: blur(8px);
       animation: fadeIn 2s ease-in;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 48px;
+      font-size: 36px;
       color: #fff8f8;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-shadow: 2px 2px 4px #00000050;
     }
 
-    p {
+    h2 {
       font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffe;
+      text-shadow: 1px 1px 3px #00000060;
+    }
+
+    p {
+      font-size: 18px;
       line-height: 1.8;
       text-shadow: 1px 1px 3px #00000050;
     }
@@ -55,8 +68,8 @@
 
     .heart {
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: red;
       transform: rotate(45deg);
       animation: float 10s infinite ease-in;
@@ -66,19 +79,19 @@
     .heart::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: red;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -10px;
+      top: -8px;
       left: 0;
     }
 
     .heart::after {
-      left: -10px;
+      left: -8px;
       top: 0;
     }
 
@@ -100,6 +113,31 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .signature {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #ffebee;
+      font-style: italic;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 25px 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -115,12 +153,16 @@
 
   <div class="container">
     <h1>मेरी मोहब्बत</h1>
+    <h2>सिर्फ तुम्हारे लिए, Jayu ❤️</h2>
     <p>
       हर दिन तुझसे मोहब्बत कुछ ज़्यादा हो जाती है,<br>
       तेरे बिना मेरी दुनिया अधूरी सी लगती है।<br><br>
       बस तुझसे जुड़ी हर बात दिल को सुकून देती है,<br>
       तू साथ है तो ज़िंदगी खूबसूरत लगती है।
     </p>
+    <div class="signature">
+      - तुम्हारा अपना Swapnil 💌
+    </div>
   </div>
 
 </body>
