@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>मेरी जयू</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Baloo+2&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>मेरी मोहब्बत - Jayu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Baloo+2&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -16,13 +16,53 @@
       background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       font-family: 'Baloo 2', cursive;
       color: #fff;
-      overflow: hidden;
+      overflow-x: hidden;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      text-align: center;
       padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #fff8f8;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #00000050;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #ffe;
+      text-shadow: 1px 1px 3px #00000060;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: 'Baloo 2', cursive;
+      border: none;
+      border-radius: 20px;
+      background: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #e754a5;
     }
 
     .container {
@@ -35,29 +75,23 @@
       animation: fadeIn 2s ease-in;
     }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 36px;
-      color: #fff8f8;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #00000050;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #ffe;
-      text-shadow: 1px 1px 3px #00000060;
-    }
-
-    p {
+    .shayari {
+      display: none;
       font-size: 18px;
       line-height: 1.8;
       text-shadow: 1px 1px 3px #00000050;
+      margin-top: 10px;
+    }
+
+    .signature {
+      margin-top: 25px;
+      font-size: 16px;
+      color: #ffebee;
+      font-style: italic;
     }
 
     .hearts {
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -110,15 +144,14 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .signature {
-      margin-top: 25px;
-      font-size: 16px;
-      color: #ffebee;
-      font-style: italic;
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 480px) {
@@ -127,21 +160,21 @@
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 18px;
       }
 
-      p {
+      button {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+
+      .shayari {
         font-size: 16px;
-      }
-
-      .container {
-        padding: 25px 15px;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="hearts">
     <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
     <div class="heart" style="left: 25%; animation-delay: 3s;"></div>
@@ -151,19 +184,43 @@
     <div class="heart" style="left: 85%; animation-delay: 1.5s;"></div>
   </div>
 
-  <div class="container">
-    <h1>मेरी मोहब्बत</h1>
-    <h2>सिर्फ तुम्हारे लिए, Jayu ❤️</h2>
-    <p>
-      हर दिन तुझसे मोहब्बत कुछ ज़्यादा हो जाती है,<br>
-      तेरे बिना मेरी दुनिया अधूरी सी लगती है।<br><br>
-      बस तुझसे जुड़ी हर बात दिल को सुकून देती है,<br>
-      तू साथ है तो ज़िंदगी खूबसूरत लगती है।
-    </p>
-    <div class="signature">
-      - तुम्हारा अपना Swapnil 💌
-    </div>
+  <h1>मेरी मोहब्बत</h1>
+  <h2>सिर्फ तुम्हारे लिए, Jayu ❤️</h2>
+
+  <div class="button-group">
+    <button onclick="showShayari('with')">Jayu with me</button>
+    <button onclick="showShayari('without')">Jayu without me</button>
   </div>
 
+  <div class="container">
+    <div id="with" class="shayari">
+      हर दिन तुझसे मोहब्बत कुछ ज़्यादा हो जाती है,<br />
+      तेरे बिना मेरी दुनिया अधूरी सी लगती है।<br /><br />
+      बस तुझसे जुड़ी हर बात दिल को सुकून देती है,<br />
+      तू साथ है तो ज़िंदगी खूबसूरत लगती है।
+    </div>
+
+    <div id="without" class="shayari">
+      अगर तेरा रास्ता मुझसे जुदा भी हो जाए,<br />
+      तब भी तुझसे मोहब्बत कम नहीं होगी।<br /><br />
+      तुझे खुशी मिले चाहे मेरे बिना ही सही,<br />
+      मेरी दुआएं हमेशा तेरे साथ होंगी।
+    </div>
+
+    <div class="signature">- तुम्हारा अपना Swapnil 💌</div>
+  </div>
+
+  <script>
+    function showShayari(type) {
+      document.getElementById("with").style.display = "none";
+      document.getElementById("without").style.display = "none";
+
+      if (type === "with") {
+        document.getElementById("with").style.display = "block";
+      } else {
+        document.getElementById("without").style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>
