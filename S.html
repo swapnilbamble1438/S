@@ -1,58 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <title>Sorry Shayari for Love</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>मेरी Jayu के नाम 💖</title>
   <style>
-    body {
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap');
+
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #8360c3, #2ebf91);
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+      box-sizing: border-box;
     }
 
-    .container {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    body {
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      padding: 20px;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 3em;
+      margin-top: 20px;
+      color: #fff5f5;
     }
 
-    p {
-      font-size: 20px;
+    .shayari {
+      margin: 40px auto;
+      max-width: 800px;
+      font-size: 1.5em;
       line-height: 1.6;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    .signature {
+    .heart {
+      width: 15px;
+      height: 15px;
+      background: red;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      animation: float 10s infinite;
+      opacity: 0.7;
+      transform: rotate(45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Multiple hearts */
+    .hearts-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 25%; animation-delay: 2s; }
+    .heart:nth-child(3) { left: 40%; animation-delay: 4s; }
+    .heart:nth-child(4) { left: 55%; animation-delay: 1s; }
+    .heart:nth-child(5) { left: 70%; animation-delay: 3s; }
+    .heart:nth-child(6) { left: 85%; animation-delay: 5s; }
+
+    footer {
       margin-top: 30px;
-      font-style: italic;
-      opacity: 0.8;
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .shayari {
+        font-size: 1.2em;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>माफ़ कर दो...</h1>
-    <p>
-      तेरे बिना अधूरी है ज़िंदगी मेरी,<br>
-      तुझसे ही है रोशनी मेरी।<br>
-      जो भी हुई हो खता मेरी,<br>
-      बस एक बार माफ़ी दे दो प्यारी।
-    </p>
+  <div class="hearts-container">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
   </div>
+
+  <h1>मेरी Jayu के नाम 💖</h1>
+
+  <div class="shayari">
+    <p>तुझसे मोहब्बत में कोई कमी नहीं,<br>
+    बस वक़्त की उलझनों में फँसे रहे हम।<br>
+    तेरा इंतज़ार भी किया दिल से हर पल,<br>
+    पर ख़ामोशियों में उलझकर रह गए हम।</p><br>
+
+    <p>जो जवाब ना आया वो बेपरवाही नहीं थी,<br>
+    कुछ लम्हे मजबूरी के भी साथी रहे।<br>
+    प्यार अब भी वही है, धड़कनों में बसा है,<br>
+    बस व्यस्त थे थोड़े, पर तुझसे जुड़ा हर पल सच्चा है।</p>
+  </div>
+
 </body>
 </html>
