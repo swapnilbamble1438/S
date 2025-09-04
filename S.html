@@ -1,67 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Forgive Me, My Love</title>
-    <style>
-        body {
-            background: linear-gradient(to top right, #ffecd2 0%, #fcb69f 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #4b2e2e;
-            padding: 40px;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pyaar Ka Pitara</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #1c92d2, #f2fcfe);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+    }
+    h2 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        max-width: 90%;
+    }
+    #heartBtn {
+        font-size: 1.8em;
+        background: #ff4757;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+    }
+    #heartBtn:hover {
+        transform: scale(1.2) rotate(-10deg);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .heart-word {
+        display: inline-block;
+        background: #ff6b81;
+        color: white;
+        padding: 15px 25px;
+        margin: 10px;
+        border-radius: 50%;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s, background 0.3s;
+        cursor: default;
+    }
+    .heart-word:hover {
+        transform: scale(1.2);
+        background: #ff4757;
+    }
 
-        .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 700px;
-            margin: auto;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
-        }
+    /* Heart shape for final name using your CSS */
+    .heart {
+        --c: #ff4757;
+        width: 200px;
+        aspect-ratio: 1;
+        background:
+          radial-gradient(circle at 60% 65%,var(--c) 64%,#0000 65%) top left/50% 50%,
+          radial-gradient(circle at 40% 65%,var(--c) 64%,#0000 65%) top right/50% 50%,
+          conic-gradient(from -45deg at 50% 85.5%,var(--c) 90deg,#0000 0) bottom/100% 50%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 40px;
+        opacity: 0;
+        transition: opacity 1s ease, transform 0.5s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
-        h1 {
-            font-size: 2.5em;
-            color: #c0392b;
-        }
-
-        .shayari {
-            font-style: italic;
-            font-size: 1.3em;
-            margin-top: 20px;
-            line-height: 1.8em;
-        }
-
-        .good-morning {
-            margin-top: 30px;
+    /* Responsive design */
+    @media (max-width: 600px) {
+        h2 {
             font-size: 1.2em;
-            color: #2e8b57;
         }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #555;
+        #heartBtn {
+            font-size: 1.4em;
+            padding: 12px 25px;
         }
-    </style>
+        .heart-word {
+            padding: 12px 20px;
+            font-size: 1em;
+        }
+        .heart {
+            width: 150px;
+            font-size: 1em;
+        }
+    }
+</style>
 </head>
 <body>
-    <div class="container">
 
-        <div class="shayari">
-           Jo lafz tumhein chubh gaye, woh meri khata thi,<br>
-Par mohabbat toh har dafa bas tumse hi wafaa thi.<br><br>
+<h2>Apke pyaar ne apko bohot pyaar bheja hai. Mujhe dabate jaeyi aur pyaar ka pitara kholte jaeyi ❤️</h2>
+<button id="heartBtn">Click Me ❤️</button>
+<div id="container"></div>
+<div class="heart" id="finalHeart">My Love Jahnvi 💖</div>
 
-Maafi ka ek pal, zindagi bhar ka sukoon dega,<br>
-Main wohi ban jaaunga jo tumhein khushiyan dega.<br><br>
+<script>
+const words = [
+    "My Sweetu", "My Babu", "My Guddu", "My Shona",
+    "My Beautiful", "My Cutiepie", "My Kaju Katli",
+    "My Chocolate", "My Sonu", "My Golu", "My Duggu"
+];
 
-🌅 Nayi roshni ke saath naya iraada liya hai maine —<br>
-Good Morning, meri jaan... chalo dobara muskurayein 💖
+let index = 0;
+const heartBtn = document.getElementById("heartBtn");
+const container = document.getElementById("container");
+const finalHeart = document.getElementById("finalHeart");
 
-        </div>
+heartBtn.addEventListener("click", () => {
+    if (index < words.length) {
+        const wordDiv = document.createElement("div");
+        wordDiv.classList.add("heart-word");
+        wordDiv.textContent = words[index];
+        container.appendChild(wordDiv);
+        index++;
+        container.scrollIntoView({behavior: "smooth"});
+    } else {
+        finalHeart.style.opacity = 1;
+        finalHeart.style.transform = "scale(1.1)";
+        heartBtn.disabled = true;
+        heartBtn.style.cursor = "default";
+        heartBtn.style.background = "#aaa";
+        heartBtn.textContent = "Pitara Khula! 💖";
+    }
+});
+</script>
 
-
-    </div>
 </body>
 </html>
