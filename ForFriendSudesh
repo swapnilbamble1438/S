@@ -189,7 +189,7 @@
         <circle cx="36" cy="14" r="1" fill="#000"/>
         <path d="M28 20 Q32 24 36 20" stroke="#000" fill="transparent" stroke-width="1"/>
       </svg>
-      <div class="name-label">sanvi</div>
+      <div class="name-label">Sanvi</div>
     </div>
 
     <div class="final-heart" id="finalHeart">💖</div>
