@@ -142,7 +142,7 @@ heartBtn.addEventListener("click", () => {
 </body>
 </html>
  -->
-<!doctype html>
+<!-- <!doctype html>
 <html lang="hi">
 <head>
 <meta charset="utf-8" />
@@ -432,3 +432,235 @@ reset();
 </script>
 </body>
 </html>
+ -->
+
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> 🌹</title>
+<style>
+body {
+  background: white;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#flower {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 40px auto 10px;
+}
+
+.petal {
+  width: 60px;
+  height: 100px;
+  background: red;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 10px;
+  left: 80px;
+  transform-origin: bottom center;
+  z-index: 2;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#stem {
+  position: absolute;
+  width: 12px;
+  height: 100px;
+  background: green;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#petalText {
+  font-size: 26px;
+  color: #6a1b9a;
+  margin-top: 160px;
+  min-height: 40px;
+  position: relative;
+}
+
+.highlight {
+  animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); color: #6a1b9a; }
+  to { transform: scale(1.15); color: #c2185b; }
+}
+
+.fallingPetal {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  background: red;
+  border-radius: 50% 50% 0 0;
+  z-index: 100;
+  animation: fall 1.5s linear forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity:1; }
+  100% { transform: translateY(200px) rotate(360deg); opacity:0; }
+}
+
+#result {
+  font-size: 22px;
+  color: #2e7d32;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+button {
+  background-color: #f06292;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  cursor: pointer;
+  margin: 20px 10px;
+}
+
+button:hover { background-color: #ec407a; }
+
+#info {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+@media(max-width:480px){
+  #flower{width:160px;height:160px;}
+  .petal{width:40px;height:70px;left:60px;}
+  #stem{height:70px; bottom: -50px;}
+  #petalText{font-size:20px; margin-top:120px;}
+  #result{font-size:18px;}
+  .fallingPetal{width:25px;height:40px;}
+  #info{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<div id="flower">
+  <div class="petal" style="transform: rotate(0deg);"></div>
+  <div class="petal" style="transform: rotate(45deg);"></div>
+  <div class="petal" style="transform: rotate(90deg);"></div>
+  <div class="petal" style="transform: rotate(135deg);"></div>
+  <div class="petal" style="transform: rotate(180deg);"></div>
+  <div class="petal" style="transform: rotate(225deg);"></div>
+  <div class="petal" style="transform: rotate(270deg);"></div>
+  <div class="petal" style="transform: rotate(315deg);"></div>
+  <div id="stem"></div>
+</div>
+
+<div id="petalText"></div>
+
+<button id="startBtn" onclick="startCounting()">Start 🌹</button>
+<button id="resetBtn" onclick="resetFlower()" style="display:none;">Reset 🔄</button>
+
+<div id="result"></div>
+<div id="info">👉 पास और फेल दोनों रिज़ल्ट देखने के लिए, दोबारा ट्राई करें 🌼</div>
+
+<script>
+let counting = false;
+let interval;
+let turn = 0; // keeps track of tries
+const phrases = ["Janhvi loves me ❤️", "Janhvi loves me not 💔"];
+
+function createFallingPetal(petal){
+  const rect = petal.getBoundingClientRect();
+  const fp = document.createElement("div");
+  fp.className = "fallingPetal";
+  fp.style.left = (rect.left + rect.width / 4 + window.scrollX) + "px";
+  fp.style.top = (rect.top + window.scrollY) + "px";
+  document.body.appendChild(fp);
+  setTimeout(() => fp.remove(), 1500);
+}
+
+function startCounting(){
+  if(counting) return;
+  counting = true;
+  document.getElementById("startBtn").style.display = "none";
+  document.getElementById("resetBtn").style.display = "none";
+
+  const petals = Array.from(document.querySelectorAll(".petal"));
+  const petalText = document.getElementById("petalText");
+  const resultDiv = document.getElementById("result");
+
+  petalText.classList.remove("highlight");
+  resultDiv.innerHTML = "";
+
+  let i = 0;
+  const total = petals.length;
+
+  // Determine starting phrase index: 1 for fail first, then alternate
+  let startIndex = turn % 2 === 0 ? 0 : 1;
+
+  interval = setInterval(() => {
+    if(i < total){
+      const p = petals[i];
+      createFallingPetal(p);
+      p.style.opacity = "0";
+      p.style.transform += " scale(0.1)";
+      petalText.textContent = phrases[(i + startIndex) % 2];
+      i++;
+    } else {
+      clearInterval(interval);
+      // Final phrase matches the last petal
+      let final = phrases[(total - 1 + startIndex) % 2];
+      petalText.textContent = final;
+      petalText.classList.add("highlight");
+
+      if(final.includes("not 💔")){
+        resultDiv.innerHTML =
+          "अगर जाना चाहो तो आज़ाद हो...<br>" +
+          "लेकिन अगर रहना है मेरे साथ,<br>" +
+          "तो थोड़ा इज़्जत देना,<br>" +
+          "और अपने पति के साथ हमेशा सच्ची रहना <br><br>" +
+          "मैं तो फिर भी तुमसे बेहिन्ता प्यार करूँगा और हमेशा तुम्हें खुश रखने की कोशिश करता रहूँगा 🙂।";
+      } else {
+        resultDiv.innerHTML =
+          "बस फिर तुम हमेशा मुझे अपने कैद में रखना और अपने से दूर मत करना 😘।";
+      }
+
+      turn++; // increment turn for next run
+      document.getElementById("resetBtn").style.display = "inline-block";
+    }
+  }, 1800);
+}
+
+function resetFlower(){
+  clearInterval(interval);
+  counting = false;
+  const petals = document.querySelectorAll(".petal");
+  petals.forEach(p => {
+    p.style.opacity = "1";
+    p.style.transform = p.style.transform.replace(/ scale\(0.1\)/,"");
+  });
+  const petalText = document.getElementById("petalText");
+  petalText.textContent = "";
+  petalText.classList.remove("highlight");
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("startBtn").style.display = "inline-block";
+  document.getElementById("resetBtn").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
