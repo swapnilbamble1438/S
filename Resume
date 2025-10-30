@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swapnil Bamble - Resume</title>
+<style>
+  body {font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #000;}
+  .container {width: 80%; margin: auto; padding: 20px;}
+  h1 {border-bottom: 2px solid #000; padding-bottom: 5px;}
+  h2 {margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px;}
+  a {color: #0066cc; text-decoration: none;}
+  a:hover {text-decoration: underline;}
+  .section {margin-bottom: 20px;}
+  ul {list-style-type: disc; margin-left: 20px;}
+  .grid {display: grid; grid-template-columns: 1fr 2fr; gap: 20px;}
+  .left {border-right: 1px solid #ccc; padding-right: 20px;}
+  .right {padding-left: 20px;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Swapnil Bamble</h1>
+  <div class="grid">
+    <div class="left">
+      <h2>Contact</h2>
+      <p>📞 8070972218</p>
+      <p>📧 <a href="mailto:swapnilbamble4@gmail.com">swapnilbamble4@gmail.com</a></p>
+      <p>📍 Saidan Bldg, Room No.1,<br>Thakurpada, Mumbra,<br>District-Thane, Pincode-400612,<br>State-Maharashtra, India</p>
+      <p>🔗 <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/swapnil-bamble-1439951ab/" target="_blank">linkedin.com/in/swapnil-bamble-1439951ab</a></p>
+      <p>💻 <b>Github:</b> <a href="https://github.com/swapnilbamble1438" target="_blank">github.com/swapnilbamble1438</a></p>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>JAVA, ADVANCE JAVA</li>
+        <li>HTML, CSS, BOOTSTRAP</li>
+        <li>JSP, Servlet, MY-SQL, MongoDB</li>
+        <li>JAVASCRIPT, JQuery, AJAX</li>
+        <li>J2EE</li>
+        <li>Spring, Spring MVC, Spring Security, Springboot</li>
+        <li>Thymeleaf, Angular, React</li>
+      </ul>
+
+      <h2>Education</h2>
+      <ul>
+        <li>BSc (Computer Science), University of Mumbai</li>
+        <li>HSC (Science), Maharashtra State Board</li>
+        <li>SSC, Maharashtra State Board</li>
+      </ul>
+
+      <h2>Certification</h2>
+      <p>Fullstack Development in Java</p>
+
+      <h2>Experience</h2>
+      <p>1.8 years in Xpaydite as a Java Developer</p>
+    </div>
+
+    <div class="right">
+      <h2>Academic Projects</h2>
+      <ul>
+        <li><b>Ecommerce Application</b> - <a href="https://github.com/swapnilbamble1438/EcommerceApp" target="_blank">Link</a> - Java J2EE</li>
+        <li><b>Voting Application</b> - <a href="https://github.com/swapnilbamble1438/VotingApp" target="_blank">Link</a> - Springboot, Thymeleaf</li>
+        <li><b>Blog Application</b> - <a href="https://github.com/swapnilbamble1438/GoBlog" target="_blank">Link</a> - Java J2EE</li>
+        <li><b>Contact Manager</b> - <a href="https://github.com/swapnilbamble1438/ContactManager" target="_blank">Link</a> - Springboot, Thymeleaf</li>
+        <li><b>Exam Portal</b> - <a href="https://github.com/swapnilbamble1438/ExamPortal" target="_blank">Link</a> - Springboot, Angular</li>
+        <li><b>Blog / Backend API's Application</b> - <a href="https://github.com/swapnilbamble1438/BlogAppApis" target="_blank">Link</a> - Springboot, React</li>
+        <li><b>Hotel Ratings</b> - <a href="https://github.com/swapnilbamble1438/HotelRatings" target="_blank">Link</a> - Springboot Microservices, Thymeleaf</li>
+      </ul>
+
+      <h2>Professional Work</h2>
+      <ul>
+        <li>Worked on the company’s CRM application, built using Java Struts.</li>
+        <li>Completed the merchant onboarding journey for the company’s application.</li>
+        <li>Worked on a microservices-based application consisting of a Spring Boot backend and a React frontend.</li>
+        <li>Implemented auto-recurring payments with Pockyt integration.</li>
+      </ul>
+
+      <h2>Extra Activities</h2>
+      <p>Playing sports like Cricket, Swimming, Chess, and exploring new places.</p>
+
+      <h2>Declaration</h2>
+      <p>The information stated in this resume is true to the best of my knowledge and belief.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
