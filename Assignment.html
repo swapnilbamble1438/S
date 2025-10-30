@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bundle & Save</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .bundle-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 330px;
+    border-radius: 10px;
+  }
+
+  .title {
+    text-align: center;
+    color: #00704a;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .bundle-box {
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+
+  .bundle-box.active {
+    border-color: #00704a;
+    background: #f6fffa;
+  }
+
+  .bundle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bundle-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bundle-left input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #00704a;
+  }
+
+  .pair-label {
+    font-weight: bold;
+  }
+
+  .discount {
+    color: #00704a;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .most-popular {
+    color: #00704a;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .options {
+    margin-top: 10px;
+    display: none;
+  }
+
+  .options.active {
+    display: block;
+  }
+
+  .option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .option-labels {
+    display: flex;
+    justify-content: flex-start;
+    gap: 55px;
+    font-size: 13px;
+    color: #555;
+    margin-left: 28px;
+    margin-top: 5px;
+  }
+
+  select {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100px;
+  }
+
+  .footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .add-to-cart {
+    background: #00704a;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background: #005f3c;
+  }
+
+  .free-shipping {
+    color: #00704a;
+    font-size: 13px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="bundle-container">
+    <div class="title">Bundle & Save</div>
+
+    <!-- 1 Pair -->
+    <div class="bundle-box active" data-pairs="1">
+      <div class="bundle-header">
+        <div class="bundle-left">
+          <input type="radio" name="pair" checked>
+          <span class="pair-label">1 Pair</span>
+        </div>
+        <span>DKK 195.00 <span class="discount">50% OFF</span></span>
+      </div>
+
+      <div class="options active">
+        <div class="option-labels">
+          <span>Size</span>
+          <span>Colour</span>
+        </div>
+        <div class="option-row">
+          <span>#1</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+        <div class="option-row">
+          <span>#2</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Pair -->
+    <div class="bundle-box" data-pairs="2">
+      <div class="bundle-header">
+        <div class="bundle-left">
+          <input type="radio" name="pair">
+          <span class="pair-label">2 Pair</span>
+        </div>
+        <span>
+          DKK 345.00 <span class="most-popular">Most Popular</span><br>
+          <span style="font-size: 13px; text-decoration: line-through; color: gray;">DKK 195.00</span>
+        </span>
+      </div>
+
+      <div class="options">
+        <div class="option-labels">
+          <span>Size</span>
+          <span>Colour</span>
+        </div>
+        <div class="option-row">
+          <span>#1</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+        <div class="option-row">
+          <span>#2</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Pair -->
+    <div class="bundle-box" data-pairs="3">
+      <div class="bundle-header">
+        <div class="bundle-left">
+          <input type="radio" name="pair">
+          <span class="pair-label">3 Pair</span>
+        </div>
+        <span>DKK 528.00 <span class="discount">60% OFF</span></span>
+      </div>
+
+      <div class="options">
+        <div class="option-labels">
+          <span>Size</span>
+          <span>Colour</span>
+        </div>
+        <div class="option-row">
+          <span>#1</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+        <div class="option-row">
+          <span>#2</span>
+          <select><option>S</option><option>M</option><option>L</option></select>
+          <select><option>Colour</option><option>Black</option><option>White</option></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="free-shipping">Free 2 Day Shipping</span>
+      <span>Total : DKK 360.00</span>
+    </div>
+
+    <button class="add-to-cart">+ Add to Cart</button>
+  </div>
+
+<script>
+  const boxes = document.querySelectorAll('.bundle-box');
+
+  boxes.forEach(box => {
+    box.addEventListener('click', () => {
+      boxes.forEach(b => {
+        b.classList.remove('active');
+        b.querySelector('.options').classList.remove('active');
+        b.querySelector('input[type="radio"]').checked = false;
+      });
+      box.classList.add('active');
+      box.querySelector('.options').classList.add('active');
+      box.querySelector('input[type="radio"]').checked = true;
+    });
+  });
+</script>
+
+</body>
+</html>
